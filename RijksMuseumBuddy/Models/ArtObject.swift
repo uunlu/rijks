@@ -18,3 +18,12 @@ struct ArtObject: Codable {
     let webImage, headerImage: Image?
     let productionPlaces: [String]
 }
+
+// MARK: - DTO Converter Extensions
+
+extension ArtObject {
+    func toArtDTO()-> ArtDTO {
+        ArtDTO(title: title, longTitle: self.longTitle, imageLink: self.webImage?.url ?? "")
+    }
+}
+
