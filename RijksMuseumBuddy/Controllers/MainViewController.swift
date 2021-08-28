@@ -11,7 +11,7 @@ import Combine
 class MainViewController: UIViewController {
     // MARK: - UI Outlet Variables
     var searchBottomAnchor: NSLayoutYAxisAnchor!
-//    var searchCollectionView: UICollectionView!
+    //    var searchCollectionView: UICollectionView!
     var galleryCollectionView: UICollectionView!
     var topbar: UIView!
     var searchArtistLabel: UILabel!
@@ -24,17 +24,21 @@ class MainViewController: UIViewController {
         return dataSource
     }()
     
-    var vm = GalleryViewModel()
-    var bag = Set<AnyCancellable>()
+    lazy var vm: GalleryViewModel =  {
+        GalleryViewModel()
+    }()
+    
+    lazy var searchDatasource: SearchDataSource = {
+        SearchDataSource()
+    }()
+
+    var bag:Set<AnyCancellable> = Set<AnyCancellable>()
     var heightConstraint: NSLayoutConstraint!
     var selectedArtist: String = "" {
         didSet {
             updateUI()
         }
     }
-    lazy var searchDatasource: TopCollectionViewDataSource = {
-        TopCollectionViewDataSource(data: ["adad"])
-    }()
     
     // MARK: - View Cycle
     override func viewDidLoad() {
@@ -67,7 +71,7 @@ class MainViewController: UIViewController {
                 default:
                     print("Anything But Portrait")
                 }
-            
+                
                 self.topSearchContainerStackView.layoutIfNeeded()
                 self.galleryCollectionView.collectionViewLayout.invalidateLayout()
             },
@@ -165,16 +169,12 @@ class MainViewController: UIViewController {
         
         searchCollectionView.translatesAutoresizingMaskIntoConstraints = false
         
-        let datasource = TopCollectionViewDataSource(data: [])
         searchCollectionView.dataSource = searchDatasource
         searchCollectionView.delegate = searchDatasource
         
         searchCollectionView.register(UINib(nibName: "SearchCell", bundle: nil), forCellWithReuseIdentifier: SearchCell.identifier)
         
-        DispatchQueue.main.asyncAfter(deadline: .now()+1){
-            datasource.updateData([])
-            searchCollectionView.reloadData()
-        }
+        searchCollectionView.reloadData()
         NSLayoutConstraint.activate([
             searchCollectionView.heightAnchor.constraint(equalToConstant: 60),
             searchCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
@@ -182,6 +182,13 @@ class MainViewController: UIViewController {
             searchCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0)
         ])
         searchBottomAnchor = searchCollectionView.bottomAnchor
+        
+        searchDatasource.$selected
+            .receive(on: RunLoop.main)
+            .sink { selectedArtist in
+                self.selectedArtist = selectedArtist
+            }
+            .store(in: &bag)
     }
     
     func setupGalleryView() {
@@ -225,28 +232,5 @@ class MainViewController: UIViewController {
                 }
             }
             .store(in: &bag)
-    }
-}
-
-// MARK: - Extensions Delegate
-extension MainViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        insetForSectionAt section: Int) -> UIEdgeInsets {
-        UIEdgeInsets(top: 0, left: 2.5, bottom: 0, right: 2.5)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedArtist = StaticDataFactory.artists[indexPath.row]
-    }
-}
-
-extension MainViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let positionX = scrollView.contentOffset.x
-        if positionX > galleryCollectionView.contentSize.width - scrollView.frame.size.width - 30, !vm.collectionsResource!.isLoading {
-            print("fetching data")
-            vm.fetch(searchQuery:selectedArtist)
-        }
     }
 }
