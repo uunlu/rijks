@@ -53,6 +53,7 @@
 		352248DE26DA86FC00F12314 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352248DD26DA86FC00F12314 /* UIViewController+Extensions.swift */; };
 		352248E026DAAFC300F12314 /* UISearchTextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352248DF26DAAFC300F12314 /* UISearchTextField+Extensions.swift */; };
 		352248E226DAB04C00F12314 /* ImageLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352248E126DAB04C00F12314 /* ImageLoadable.swift */; };
+		352248E626DAE0AB00F12314 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352248E526DAE0AB00F12314 /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		352248DD26DA86FC00F12314 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		352248DF26DAAFC300F12314 /* UISearchTextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearchTextField+Extensions.swift"; sourceTree = "<group>"; };
 		352248E126DAB04C00F12314 /* ImageLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadable.swift; sourceTree = "<group>"; };
+		352248E526DAE0AB00F12314 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,12 +217,8 @@
 		352248AD26DA398500F12314 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				3522485D26DA25C300F12314 /* MainViewController.swift */,
-				352248B626DA3C2800F12314 /* SearchDataSource.swift */,
-				352248BA26DA4F7200F12314 /* MainViewController+UICollectionViewDataSource.swift */,
-				352248BC26DA4FD800F12314 /* MainViewController+UICollectionViewDelegateFlowLayout.swift */,
-				352248D126DA5DF500F12314 /* GalleryCollectionViewDataSource.swift */,
-				352248DA26DA5EF800F12314 /* GalleryViewModel.swift */,
+				352248E426DAE09000F12314 /* Details */,
+				352248E326DAE08600F12314 /* Main */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -277,6 +275,27 @@
 				352248DF26DAAFC300F12314 /* UISearchTextField+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		352248E326DAE08600F12314 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				3522485D26DA25C300F12314 /* MainViewController.swift */,
+				352248B626DA3C2800F12314 /* SearchDataSource.swift */,
+				352248BA26DA4F7200F12314 /* MainViewController+UICollectionViewDataSource.swift */,
+				352248BC26DA4FD800F12314 /* MainViewController+UICollectionViewDelegateFlowLayout.swift */,
+				352248D126DA5DF500F12314 /* GalleryCollectionViewDataSource.swift */,
+				352248DA26DA5EF800F12314 /* GalleryViewModel.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		352248E426DAE09000F12314 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				352248E526DAE0AB00F12314 /* DetailsViewController.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -422,6 +441,7 @@
 			files = (
 				352248B126DA39F900F12314 /* SearchCell.swift in Sources */,
 				352248E026DAAFC300F12314 /* UISearchTextField+Extensions.swift in Sources */,
+				352248E626DAE0AB00F12314 /* DetailsViewController.swift in Sources */,
 				352248D826DA5E8100F12314 /* ArtCell.swift in Sources */,
 				3522487F26DA29E400F12314 /* FacetFacet.swift in Sources */,
 				3522487726DA299600F12314 /* Image.swift in Sources */,

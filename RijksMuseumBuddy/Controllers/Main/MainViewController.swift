@@ -234,6 +234,12 @@ class MainViewController: UIViewController {
                 }
             }
             .store(in: &bag)
+        dataSource.$selectedCollection
+            .receive(on: RunLoop.main)
+            .sink { value in
+                print(value)
+            }
+            .store(in: &bag)
     }
 }
 

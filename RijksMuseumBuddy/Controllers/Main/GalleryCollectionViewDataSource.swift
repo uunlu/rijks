@@ -16,6 +16,7 @@ class GalleryCollectionViewDataSource: NSObject, UICollectionViewDataSource {
     
     var collectionView: UICollectionView?
     @Published var shouldFetch: Bool = false
+    @Published var selectedCollection: String = ""
     
     // MARK: - DataSource Delegates
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -62,6 +63,10 @@ extension GalleryCollectionViewDataSource: UICollectionViewDelegate {
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
         UIEdgeInsets(top: 0, left: 2.5, bottom: 0, right: 2.5)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedCollection = data[indexPath.row].id
     }
 }
 
