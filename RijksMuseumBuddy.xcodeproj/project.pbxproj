@@ -37,6 +37,11 @@
 		352248AC26DA35EB00F12314 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3522488026DA2A3E00F12314 /* Config.swift */; };
 		352248B126DA39F900F12314 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352248AF26DA39F900F12314 /* SearchCell.swift */; };
 		352248B226DA39F900F12314 /* SearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 352248B026DA39F900F12314 /* SearchCell.xib */; };
+		352248B526DA3AC700F12314 /* StaticDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352248B426DA3AC600F12314 /* StaticDataFactory.swift */; };
+		352248B726DA3C2800F12314 /* SearchDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352248B626DA3C2800F12314 /* SearchDataSource.swift */; };
+		352248B926DA3F1000F12314 /* SearchCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352248B826DA3F1000F12314 /* SearchCellViewModel.swift */; };
+		352248BB26DA4F7200F12314 /* MainViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352248BA26DA4F7200F12314 /* MainViewController+UICollectionViewDataSource.swift */; };
+		352248BD26DA4FD800F12314 /* MainViewController+UICollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352248BC26DA4FD800F12314 /* MainViewController+UICollectionViewDelegateFlowLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +76,11 @@
 		3522489D26DA35D400F12314 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
 		352248AF26DA39F900F12314 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		352248B026DA39F900F12314 /* SearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCell.xib; sourceTree = "<group>"; };
+		352248B426DA3AC600F12314 /* StaticDataFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticDataFactory.swift; sourceTree = "<group>"; };
+		352248B626DA3C2800F12314 /* SearchDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDataSource.swift; sourceTree = "<group>"; };
+		352248B826DA3F1000F12314 /* SearchCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCellViewModel.swift; sourceTree = "<group>"; };
+		352248BA26DA4F7200F12314 /* MainViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
+		352248BC26DA4FD800F12314 /* MainViewController+UICollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+UICollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +125,7 @@
 		3522485826DA25C300F12314 /* RijksMuseumBuddy */ = {
 			isa = PBXGroup;
 			children = (
+				352248B326DA3AB000F12314 /* Data */,
 				352248AE26DA39CE00F12314 /* Views */,
 				352248AD26DA398500F12314 /* Controllers */,
 				3522487126DA295000F12314 /* Models */,
@@ -164,6 +175,9 @@
 			isa = PBXGroup;
 			children = (
 				3522485D26DA25C300F12314 /* MainViewController.swift */,
+				352248B626DA3C2800F12314 /* SearchDataSource.swift */,
+				352248BA26DA4F7200F12314 /* MainViewController+UICollectionViewDataSource.swift */,
+				352248BC26DA4FD800F12314 /* MainViewController+UICollectionViewDelegateFlowLayout.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -173,8 +187,17 @@
 			children = (
 				352248AF26DA39F900F12314 /* SearchCell.swift */,
 				352248B026DA39F900F12314 /* SearchCell.xib */,
+				352248B826DA3F1000F12314 /* SearchCellViewModel.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		352248B326DA3AB000F12314 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				352248B426DA3AC600F12314 /* StaticDataFactory.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,9 +316,14 @@
 				3522485E26DA25C300F12314 /* MainViewController.swift in Sources */,
 				3522487326DA296D00F12314 /* Collection.swift in Sources */,
 				3522485A26DA25C300F12314 /* AppDelegate.swift in Sources */,
+				352248B926DA3F1000F12314 /* SearchCellViewModel.swift in Sources */,
+				352248B726DA3C2800F12314 /* SearchDataSource.swift in Sources */,
 				3522488126DA2A3E00F12314 /* Config.swift in Sources */,
+				352248B526DA3AC700F12314 /* StaticDataFactory.swift in Sources */,
 				3522486F26DA28F500F12314 /* API.swift in Sources */,
+				352248BB26DA4F7200F12314 /* MainViewController+UICollectionViewDataSource.swift in Sources */,
 				3522487B26DA29B800F12314 /* CountFacets.swift in Sources */,
+				352248BD26DA4FD800F12314 /* MainViewController+UICollectionViewDelegateFlowLayout.swift in Sources */,
 				3522487526DA297F00F12314 /* ArtObject.swift in Sources */,
 				3522487D26DA29CB00F12314 /* CollectionFacet.swift in Sources */,
 				3522485C26DA25C300F12314 /* SceneDelegate.swift in Sources */,
