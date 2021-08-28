@@ -18,6 +18,7 @@ class GalleryViewModel: ObservableObject {
             collectionsResource?.addObserver(self).loadIfNeeded()
         }
     }
+    private var lastMaker: String = ""
     private var lastQuery: String = ""
     @Published var items: [ArtObject] = []
     
@@ -39,13 +40,14 @@ extension GalleryViewModel: ResourceObserver {
         currentPage += 1
     }
     
-    func fetch(searchQuery: String) {
-        if lastQuery != searchQuery {
+    func fetch(maker: String, query: String = "") {
+        if lastMaker != maker || lastQuery != query {
             currentPage = 1
-            lastQuery = searchQuery
+            lastMaker = maker
+            lastQuery = query
             items.removeAll()
         }
-        collectionsResource = API.shared.search(searchQuery, page: currentPage)
+        collectionsResource = API.shared.search(maker, query: query, page: currentPage)
     }
 }
 

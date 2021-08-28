@@ -16,7 +16,7 @@ class MainViewController: UIViewController {
     var topbar: UIView!
     var searchArtistLabel: UILabel!
     var topSearchContainerStackView: UIStackView!
-    var searchTextField: UISearchTextField!
+    @Published var searchTextField: UISearchTextField!
     
     lazy var dataSource: GalleryCollectionViewDataSource = {
         let dataSource = GalleryCollectionViewDataSource(data: [])
@@ -39,14 +39,16 @@ class MainViewController: UIViewController {
             updateUI()
         }
     }
+    var query: String = ""
     
     // MARK: - View Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        vm.fetch(searchQuery: StaticDataFactory.artists.first!)
+        vm.fetch(maker: StaticDataFactory.artists.first!)
         setupSearchView()
         setupTopbarView()
         setupGalleryView()
+        searchTextField.delegate = self
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -87,7 +89,7 @@ class MainViewController: UIViewController {
     func updateUI() {
         searchArtistLabel.text = selectedArtist
         dataSource.removeAll()
-        vm.fetch(searchQuery: selectedArtist)
+        vm.fetch(maker: selectedArtist)
     }
     
     func setupTopbarView() {
@@ -228,9 +230,16 @@ class MainViewController: UIViewController {
             .receive(on: RunLoop.main)
             .sink { shouldFetch in
                 if shouldFetch, !self.vm.collectionsResource!.isLoading {
-                    self.vm.fetch(searchQuery: self.selectedArtist)
+                    self.vm.fetch(maker: self.selectedArtist, query: self.query)
                 }
             }
             .store(in: &bag)
+    }
+}
+
+extension MainViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        query = textField.text ?? ""
+        vm.fetch(maker: selectedArtist, query: query)
     }
 }

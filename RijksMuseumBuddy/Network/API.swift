@@ -43,12 +43,13 @@ class API: Service {
 }
 
 extension API {
-    func search(_ involvedMaker: String, page: Int = 1, pageSize: Int = 10) -> Resource {
+    func search(_ involvedMaker: String, query: String = "", page: Int = 1, pageSize: Int = 10) -> Resource {
         return service
             .resource("collection")
             .withParam("key", Config.apiKey)
             .withParam("involvedMaker", involvedMaker)
             .withParam("p", "\(page)")
+            .withParam("q", "\(query)")
             .withParam("ps", "\(pageSize)")
     }
 }
