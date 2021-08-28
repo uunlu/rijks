@@ -13,7 +13,39 @@
 		3522486126DA25C300F12314 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3522485F26DA25C300F12314 /* Main.storyboard */; };
 		3522486326DA25C700F12314 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3522486226DA25C700F12314 /* Assets.xcassets */; };
 		3522486626DA25C700F12314 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3522486426DA25C700F12314 /* LaunchScreen.storyboard */; };
+		3522486F26DA28F500F12314 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3522486E26DA28F500F12314 /* API.swift */; };
+		3522487326DA296D00F12314 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3522487226DA296D00F12314 /* Collection.swift */; };
+		3522487526DA297F00F12314 /* ArtObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3522487426DA297F00F12314 /* ArtObject.swift */; };
+		3522487726DA299600F12314 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3522487626DA299600F12314 /* Image.swift */; };
+		3522487926DA29A600F12314 /* Links.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3522487826DA29A600F12314 /* Links.swift */; };
+		3522487B26DA29B800F12314 /* CountFacets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3522487A26DA29B800F12314 /* CountFacets.swift */; };
+		3522487D26DA29CB00F12314 /* CollectionFacet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3522487C26DA29CB00F12314 /* CollectionFacet.swift */; };
+		3522487F26DA29E400F12314 /* FacetFacet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3522487E26DA29E400F12314 /* FacetFacet.swift */; };
+		3522488126DA2A3E00F12314 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3522488026DA2A3E00F12314 /* Config.swift */; };
+		3522489226DA34D500F12314 /* Siesta in Frameworks */ = {isa = PBXBuildFile; productRef = 3522489126DA34D500F12314 /* Siesta */; };
+		3522489426DA34D500F12314 /* SiestaUI in Frameworks */ = {isa = PBXBuildFile; productRef = 3522489326DA34D500F12314 /* SiestaUI */; };
+		3522489626DA34D500F12314 /* Siesta_Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3522489526DA34D500F12314 /* Siesta_Alamofire */; };
+		3522489E26DA35D400F12314 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3522489D26DA35D400F12314 /* NetworkTests.swift */; };
+		352248A426DA35E800F12314 /* FacetFacet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3522487E26DA29E400F12314 /* FacetFacet.swift */; };
+		352248A526DA35E800F12314 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3522487226DA296D00F12314 /* Collection.swift */; };
+		352248A626DA35E800F12314 /* ArtObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3522487426DA297F00F12314 /* ArtObject.swift */; };
+		352248A726DA35E800F12314 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3522487626DA299600F12314 /* Image.swift */; };
+		352248A826DA35E800F12314 /* CollectionFacet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3522487C26DA29CB00F12314 /* CollectionFacet.swift */; };
+		352248A926DA35E800F12314 /* CountFacets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3522487A26DA29B800F12314 /* CountFacets.swift */; };
+		352248AA26DA35E800F12314 /* Links.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3522487826DA29A600F12314 /* Links.swift */; };
+		352248AB26DA35EB00F12314 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3522486E26DA28F500F12314 /* API.swift */; };
+		352248AC26DA35EB00F12314 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3522488026DA2A3E00F12314 /* Config.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3522489F26DA35D400F12314 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3522484E26DA25C300F12314 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3522485526DA25C300F12314;
+			remoteInfo = RijksMuseumBuddy;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3522485626DA25C300F12314 /* RijksMuseumBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RijksMuseumBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,10 +56,31 @@
 		3522486226DA25C700F12314 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3522486526DA25C700F12314 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3522486726DA25C700F12314 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3522486E26DA28F500F12314 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		3522487226DA296D00F12314 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
+		3522487426DA297F00F12314 /* ArtObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtObject.swift; sourceTree = "<group>"; };
+		3522487626DA299600F12314 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		3522487826DA29A600F12314 /* Links.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Links.swift; sourceTree = "<group>"; };
+		3522487A26DA29B800F12314 /* CountFacets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountFacets.swift; sourceTree = "<group>"; };
+		3522487C26DA29CB00F12314 /* CollectionFacet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionFacet.swift; sourceTree = "<group>"; };
+		3522487E26DA29E400F12314 /* FacetFacet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacetFacet.swift; sourceTree = "<group>"; };
+		3522488026DA2A3E00F12314 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		3522489B26DA35D400F12314 /* NetworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3522489D26DA35D400F12314 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		3522485326DA25C300F12314 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3522489226DA34D500F12314 /* Siesta in Frameworks */,
+				3522489626DA34D500F12314 /* Siesta_Alamofire in Frameworks */,
+				3522489426DA34D500F12314 /* SiestaUI in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3522489826DA35D400F12314 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				3522485826DA25C300F12314 /* RijksMuseumBuddy */,
+				3522489C26DA35D400F12314 /* NetworkTests */,
 				3522485726DA25C300F12314 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				3522485626DA25C300F12314 /* RijksMuseumBuddy.app */,
+				3522489B26DA35D400F12314 /* NetworkTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,6 +111,8 @@
 		3522485826DA25C300F12314 /* RijksMuseumBuddy */ = {
 			isa = PBXGroup;
 			children = (
+				3522487126DA295000F12314 /* Models */,
+				3522486D26DA28DC00F12314 /* Network */,
 				3522485926DA25C300F12314 /* AppDelegate.swift */,
 				3522485B26DA25C300F12314 /* SceneDelegate.swift */,
 				3522485D26DA25C300F12314 /* ViewController.swift */,
@@ -65,6 +122,37 @@
 				3522486726DA25C700F12314 /* Info.plist */,
 			);
 			path = RijksMuseumBuddy;
+			sourceTree = "<group>";
+		};
+		3522486D26DA28DC00F12314 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3522486E26DA28F500F12314 /* API.swift */,
+				3522488026DA2A3E00F12314 /* Config.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		3522487126DA295000F12314 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3522487226DA296D00F12314 /* Collection.swift */,
+				3522487426DA297F00F12314 /* ArtObject.swift */,
+				3522487626DA299600F12314 /* Image.swift */,
+				3522487826DA29A600F12314 /* Links.swift */,
+				3522487A26DA29B800F12314 /* CountFacets.swift */,
+				3522487C26DA29CB00F12314 /* CollectionFacet.swift */,
+				3522487E26DA29E400F12314 /* FacetFacet.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3522489C26DA35D400F12314 /* NetworkTests */ = {
+			isa = PBXGroup;
+			children = (
+				3522489D26DA35D400F12314 /* NetworkTests.swift */,
+			);
+			path = NetworkTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,9 +171,32 @@
 			dependencies = (
 			);
 			name = RijksMuseumBuddy;
+			packageProductDependencies = (
+				3522489126DA34D500F12314 /* Siesta */,
+				3522489326DA34D500F12314 /* SiestaUI */,
+				3522489526DA34D500F12314 /* Siesta_Alamofire */,
+			);
 			productName = RijksMuseumBuddy;
 			productReference = 3522485626DA25C300F12314 /* RijksMuseumBuddy.app */;
 			productType = "com.apple.product-type.application";
+		};
+		3522489A26DA35D400F12314 /* NetworkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 352248A126DA35D400F12314 /* Build configuration list for PBXNativeTarget "NetworkTests" */;
+			buildPhases = (
+				3522489726DA35D400F12314 /* Sources */,
+				3522489826DA35D400F12314 /* Frameworks */,
+				3522489926DA35D400F12314 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				352248A026DA35D400F12314 /* PBXTargetDependency */,
+			);
+			name = NetworkTests;
+			productName = NetworkTests;
+			productReference = 3522489B26DA35D400F12314 /* NetworkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -100,6 +211,10 @@
 					3522485526DA25C300F12314 = {
 						CreatedOnToolsVersion = 13.0;
 					};
+					3522489A26DA35D400F12314 = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = 3522485526DA25C300F12314;
+					};
 				};
 			};
 			buildConfigurationList = 3522485126DA25C300F12314 /* Build configuration list for PBXProject "RijksMuseumBuddy" */;
@@ -111,11 +226,15 @@
 				Base,
 			);
 			mainGroup = 3522484D26DA25C300F12314;
+			packageReferences = (
+				3522489026DA34D500F12314 /* XCRemoteSwiftPackageReference "siesta" */,
+			);
 			productRefGroup = 3522485726DA25C300F12314 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				3522485526DA25C300F12314 /* RijksMuseumBuddy */,
+				3522489A26DA35D400F12314 /* NetworkTests */,
 			);
 		};
 /* End PBXProject section */
@@ -131,6 +250,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3522489926DA35D400F12314 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -138,13 +264,47 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3522487F26DA29E400F12314 /* FacetFacet.swift in Sources */,
+				3522487726DA299600F12314 /* Image.swift in Sources */,
 				3522485E26DA25C300F12314 /* ViewController.swift in Sources */,
+				3522487326DA296D00F12314 /* Collection.swift in Sources */,
 				3522485A26DA25C300F12314 /* AppDelegate.swift in Sources */,
+				3522488126DA2A3E00F12314 /* Config.swift in Sources */,
+				3522486F26DA28F500F12314 /* API.swift in Sources */,
+				3522487B26DA29B800F12314 /* CountFacets.swift in Sources */,
+				3522487526DA297F00F12314 /* ArtObject.swift in Sources */,
+				3522487D26DA29CB00F12314 /* CollectionFacet.swift in Sources */,
 				3522485C26DA25C300F12314 /* SceneDelegate.swift in Sources */,
+				3522487926DA29A600F12314 /* Links.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3522489726DA35D400F12314 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				352248A626DA35E800F12314 /* ArtObject.swift in Sources */,
+				352248A526DA35E800F12314 /* Collection.swift in Sources */,
+				352248A926DA35E800F12314 /* CountFacets.swift in Sources */,
+				3522489E26DA35D400F12314 /* NetworkTests.swift in Sources */,
+				352248A826DA35E800F12314 /* CollectionFacet.swift in Sources */,
+				352248A426DA35E800F12314 /* FacetFacet.swift in Sources */,
+				352248A726DA35E800F12314 /* Image.swift in Sources */,
+				352248AC26DA35EB00F12314 /* Config.swift in Sources */,
+				352248AB26DA35EB00F12314 /* API.swift in Sources */,
+				352248AA26DA35E800F12314 /* Links.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		352248A026DA35D400F12314 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3522485526DA25C300F12314 /* RijksMuseumBuddy */;
+			targetProxy = 3522489F26DA35D400F12314 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3522485F26DA25C300F12314 /* Main.storyboard */ = {
@@ -217,7 +377,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -272,7 +432,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -338,6 +498,54 @@
 			};
 			name = Release;
 		};
+		352248A226DA35D400F12314 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = E3UP8K5Y56;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haselt.NetworkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RijksMuseumBuddy.app/RijksMuseumBuddy";
+			};
+			name = Debug;
+		};
+		352248A326DA35D400F12314 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = E3UP8K5Y56;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haselt.NetworkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RijksMuseumBuddy.app/RijksMuseumBuddy";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -359,7 +567,45 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		352248A126DA35D400F12314 /* Build configuration list for PBXNativeTarget "NetworkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				352248A226DA35D400F12314 /* Debug */,
+				352248A326DA35D400F12314 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3522489026DA34D500F12314 /* XCRemoteSwiftPackageReference "siesta" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bustoutsolutions/siesta";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3522489126DA34D500F12314 /* Siesta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3522489026DA34D500F12314 /* XCRemoteSwiftPackageReference "siesta" */;
+			productName = Siesta;
+		};
+		3522489326DA34D500F12314 /* SiestaUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3522489026DA34D500F12314 /* XCRemoteSwiftPackageReference "siesta" */;
+			productName = SiestaUI;
+		};
+		3522489526DA34D500F12314 /* Siesta_Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3522489026DA34D500F12314 /* XCRemoteSwiftPackageReference "siesta" */;
+			productName = Siesta_Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3522484E26DA25C300F12314 /* Project object */;
 }
