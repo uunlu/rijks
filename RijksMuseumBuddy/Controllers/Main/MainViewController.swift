@@ -58,7 +58,7 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
         configureViews()
         subscribeToPublishers()
-        
+        navigationController?.navigationBar.topItem?.title = "Rijks Museum"
         // Fetch initial data on view
         vm.fetch(maker: StaticDataFactory.artists.first!)
         loadingIndicator.startAnimating()
