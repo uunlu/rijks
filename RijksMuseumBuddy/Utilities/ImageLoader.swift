@@ -10,6 +10,7 @@ import UIKit
 
 final class ImageLoader: NSObject {
     var cache: NSCache<NSString, UIImage>
+    private var downloadTask: URLSessionDataTask?
     
     init(cache: NSCache<NSString, UIImage> = NSCache()) {
         self.cache = cache
@@ -20,7 +21,7 @@ final class ImageLoader: NSObject {
             completion(cachedImage)
         }
         
-        let downloadTask = URLSession.shared.dataTask(with: url) { (data, response, error) -> Void in
+        downloadTask = URLSession.shared.dataTask(with: url) { (data, response, error) -> Void in
             guard let data = data, let image = UIImage(data: data) else {
                 completion(nil)
                 return
@@ -28,6 +29,10 @@ final class ImageLoader: NSObject {
             self.cache.setObject(image, forKey: url.absoluteString as NSString)
             completion(image)
         }
-        downloadTask.resume()
+        downloadTask?.resume()
+    }
+    
+    func cancel() {
+        downloadTask?.cancel()
     }
 }
