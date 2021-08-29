@@ -9,7 +9,7 @@ import Foundation
 import Combine
 import Siesta
 
-class DetailsViewModel: ObservableObject {
+final class DetailsViewModel: ObservableObject {
     private(set) var detailsResource: Resource? {
         didSet {
             oldValue?.removeObservers(ownedBy: self)
@@ -25,8 +25,12 @@ class DetailsViewModel: ObservableObject {
     }
     
     private func transformData(_ data: CollectionDetails) {
-        model = ArtObjectDetailsDTO(id: data.artObject.id, title: data.artObject.title, desciption: data.artObject.artObjectDescription ?? "No Description",
-                                    imageLink: data.artObject.webImage.url)
+        let artObject = data.artObject
+        let description = artObject.artObjectDescription ?? "No Description"
+        let imageLink = artObject.webImage?.url ?? ""
+        
+        model = ArtObjectDetailsDTO(id: artObject.id, title: artObject.title, desciption: description,
+                                    imageLink: imageLink)
     }
 }
 
@@ -35,6 +39,7 @@ extension DetailsViewModel: ResourceObserver {
         guard let result: CollectionDetails = resource.typedContent() else {
             print(resource.text)
             print("invalid model")
+            // TODO: Handle error on UI
             return
         }
         

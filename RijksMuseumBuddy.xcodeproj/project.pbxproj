@@ -40,8 +40,6 @@
 		352248B526DA3AC700F12314 /* StaticDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352248B426DA3AC600F12314 /* StaticDataFactory.swift */; };
 		352248B726DA3C2800F12314 /* SearchDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352248B626DA3C2800F12314 /* SearchDataSource.swift */; };
 		352248B926DA3F1000F12314 /* SearchCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352248B826DA3F1000F12314 /* SearchCellViewModel.swift */; };
-		352248BB26DA4F7200F12314 /* MainViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352248BA26DA4F7200F12314 /* MainViewController+UICollectionViewDataSource.swift */; };
-		352248BD26DA4FD800F12314 /* MainViewController+UICollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352248BC26DA4FD800F12314 /* MainViewController+UICollectionViewDelegateFlowLayout.swift */; };
 		352248C226DA5BC700F12314 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352248C126DA5BC700F12314 /* ImageLoader.swift */; };
 		352248CA26DA5BF900F12314 /* ImageLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352248C926DA5BF900F12314 /* ImageLoaderTests.swift */; };
 		352248D026DA5C9700F12314 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352248C126DA5BC700F12314 /* ImageLoader.swift */; };
@@ -56,6 +54,7 @@
 		352248E626DAE0AB00F12314 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352248E526DAE0AB00F12314 /* DetailsViewController.swift */; };
 		352248E826DB645600F12314 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352248E726DB645500F12314 /* DetailsViewModel.swift */; };
 		352248EA26DB650600F12314 /* CollectionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352248E926DB650600F12314 /* CollectionDetails.swift */; };
+		352248EC26DBB99C00F12314 /* MainViewController+SetupViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352248EB26DBB99C00F12314 /* MainViewController+SetupViews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,8 +99,6 @@
 		352248B426DA3AC600F12314 /* StaticDataFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticDataFactory.swift; sourceTree = "<group>"; };
 		352248B626DA3C2800F12314 /* SearchDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDataSource.swift; sourceTree = "<group>"; };
 		352248B826DA3F1000F12314 /* SearchCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCellViewModel.swift; sourceTree = "<group>"; };
-		352248BA26DA4F7200F12314 /* MainViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
-		352248BC26DA4FD800F12314 /* MainViewController+UICollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+UICollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
 		352248C126DA5BC700F12314 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		352248C726DA5BF900F12314 /* ImageLoaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageLoaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		352248C926DA5BF900F12314 /* ImageLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderTests.swift; sourceTree = "<group>"; };
@@ -116,6 +113,7 @@
 		352248E526DAE0AB00F12314 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		352248E726DB645500F12314 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		352248E926DB650600F12314 /* CollectionDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetails.swift; sourceTree = "<group>"; };
+		352248EB26DBB99C00F12314 /* MainViewController+SetupViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+SetupViews.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,10 +285,9 @@
 			children = (
 				3522485D26DA25C300F12314 /* MainViewController.swift */,
 				352248B626DA3C2800F12314 /* SearchDataSource.swift */,
-				352248BA26DA4F7200F12314 /* MainViewController+UICollectionViewDataSource.swift */,
-				352248BC26DA4FD800F12314 /* MainViewController+UICollectionViewDelegateFlowLayout.swift */,
 				352248D126DA5DF500F12314 /* GalleryCollectionViewDataSource.swift */,
 				352248DA26DA5EF800F12314 /* GalleryViewModel.swift */,
+				352248EB26DBB99C00F12314 /* MainViewController+SetupViews.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -445,6 +442,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				352248EC26DBB99C00F12314 /* MainViewController+SetupViews.swift in Sources */,
 				352248B126DA39F900F12314 /* SearchCell.swift in Sources */,
 				352248E026DAAFC300F12314 /* UISearchTextField+Extensions.swift in Sources */,
 				352248E626DAE0AB00F12314 /* DetailsViewController.swift in Sources */,
@@ -465,10 +463,8 @@
 				352248E226DAB04C00F12314 /* ImageLoadable.swift in Sources */,
 				3522486F26DA28F500F12314 /* API.swift in Sources */,
 				352248EA26DB650600F12314 /* CollectionDetails.swift in Sources */,
-				352248BB26DA4F7200F12314 /* MainViewController+UICollectionViewDataSource.swift in Sources */,
 				352248DB26DA5EF800F12314 /* GalleryViewModel.swift in Sources */,
 				3522487B26DA29B800F12314 /* CountFacets.swift in Sources */,
-				352248BD26DA4FD800F12314 /* MainViewController+UICollectionViewDelegateFlowLayout.swift in Sources */,
 				3522487526DA297F00F12314 /* ArtObject.swift in Sources */,
 				3522487D26DA29CB00F12314 /* CollectionFacet.swift in Sources */,
 				3522485C26DA25C300F12314 /* SceneDelegate.swift in Sources */,

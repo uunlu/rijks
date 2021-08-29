@@ -23,7 +23,7 @@ struct ArtObject: Codable {
 
 extension ArtObject {
     func toArtDTO()-> ArtDTO {
-        ArtDTO(title: title, longTitle: self.longTitle, imageLink: self.webImage?.url ?? "")
+        ArtDTO(title: title, longTitle: self.longTitle, imageLink: self.headerImage?.url ?? "")
     }
 }
 

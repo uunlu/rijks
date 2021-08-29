@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19158" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aiS-Qe-nNS">
-    <device id="retina5_5" orientation="landscape" appearance="light"/>
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19141"/>
@@ -14,17 +14,17 @@
             <objects>
                 <viewController storyboardIdentifier="DetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xBP-Qx-rSE" customClass="DetailsViewController" customModule="RijksMuseumBuddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5zX-D4-aJ8">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8m1-h0-hef">
-                                <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7kK-OP-F5d" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="736" height="409.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="728"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yNx-Jj-HOv">
-                                                <rect key="frame" x="0.0" y="0.0" width="736" height="250"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="300" id="HKE-vA-wbh">
                                                         <variation key="heightClass=compact-widthClass=regular" constant="250"/>
@@ -32,16 +32,16 @@
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="AaE-6j-SCD" userLabel="Top Stack View">
-                                                <rect key="frame" x="0.0" y="265" width="736" height="43.333333333333314"/>
+                                                <rect key="frame" x="10" y="315" width="394" height="43.333333333333314"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZOV-nZ-A1Z">
-                                                        <rect key="frame" x="0.0" y="0.0" width="736" height="20.333333333333332"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="394" height="20.333333333333332"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                         <color key="textColor" systemColor="systemBackgroundColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lF6-6t-FPI">
-                                                        <rect key="frame" x="0.0" y="25.333333333333314" width="736" height="18"/>
+                                                        <rect key="frame" x="0.0" y="25.333333333333314" width="394" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" systemColor="systemBackgroundColor"/>
                                                         <nil key="highlightedColor"/>
@@ -51,11 +51,11 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="AaE-6j-SCD" secondAttribute="trailing" id="8GZ-Pi-pF0"/>
+                                            <constraint firstAttribute="trailing" secondItem="AaE-6j-SCD" secondAttribute="trailing" constant="10" id="8GZ-Pi-pF0"/>
                                             <constraint firstItem="AaE-6j-SCD" firstAttribute="top" secondItem="yNx-Jj-HOv" secondAttribute="bottom" constant="15" id="CTy-s2-bg1"/>
                                             <constraint firstAttribute="trailing" secondItem="yNx-Jj-HOv" secondAttribute="trailing" id="E8j-5z-uER"/>
                                             <constraint firstItem="yNx-Jj-HOv" firstAttribute="top" secondItem="7kK-OP-F5d" secondAttribute="top" id="cRs-ds-Dvo"/>
-                                            <constraint firstItem="AaE-6j-SCD" firstAttribute="leading" secondItem="7kK-OP-F5d" secondAttribute="leading" id="lnv-ae-ATi"/>
+                                            <constraint firstItem="AaE-6j-SCD" firstAttribute="leading" secondItem="7kK-OP-F5d" secondAttribute="leading" constant="10" id="lnv-ae-ATi"/>
                                             <constraint firstItem="yNx-Jj-HOv" firstAttribute="leading" secondItem="7kK-OP-F5d" secondAttribute="leading" id="ngs-3T-T4Q"/>
                                         </constraints>
                                     </view>
@@ -95,7 +95,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="RijksMuseumBuddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

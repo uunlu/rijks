@@ -9,8 +9,8 @@ import UIKit
 import Foundation
 import Combine
 
-class GalleryCollectionViewDataSource: NSObject, UICollectionViewDataSource {
-    // MARK: Variables
+final class GalleryCollectionViewDataSource: NSObject, UICollectionViewDataSource {
+    // MARK: - Variables
     private let imageLoader = ImageLoader()
     private let cellWidth = UIScreen.main.bounds.width * 0.9
     

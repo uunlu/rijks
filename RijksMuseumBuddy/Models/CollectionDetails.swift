@@ -20,7 +20,7 @@ struct ArtObjectDetails: Codable {
     let id, priref, objectNumber, language: String
     let title: String
     let copyrightHolder: String?
-    let webImage: WebImage
+    let webImage: WebImage?
     let colors: [Color]
     let colorsWithNormalization: [ColorsWithNormalization]
     let normalizedColors, normalized32Colors: [Color]
@@ -37,20 +37,20 @@ struct ArtObjectDetails: Codable {
     let exhibitions: [String]
     let materials: [String]
     let techniques: [String]
-    let productionPlaces: [String]
-    let dating: Dating
-    let classification: Classification
-    let hasImage: Bool
+    let productionPlaces: [String]?
+    let dating: Dating?
+    let classification: Classification?
+    let hasImage: Bool?
     let historicalPersons, inscriptions: [String]
-    let documentation: [String]
-    let catRefRPK: [String]
-    let principalOrFirstMaker: String
+    let documentation: [String]?
+    let catRefRPK: [String]?
+    let principalOrFirstMaker: String?
     let dimensions: [Dimension]
     let physicalProperties: [String]
-    let physicalMedium, longTitle, subTitle, scLabelLine: String
-    let label: Label
-    let showImage: Bool
-    let location: String
+    let physicalMedium, longTitle, subTitle, scLabelLine: String?
+    let label: Label?
+    let showImage: Bool?
+    let location: String?
 
     enum CodingKeys: String, CodingKey {
         case links, id, priref, objectNumber, language, title, copyrightHolder, webImage, colors, colorsWithNormalization, normalizedColors, normalized32Colors, titles
@@ -61,7 +61,7 @@ struct ArtObjectDetails: Codable {
 
 // MARK: - Acquisition
 struct Acquisition: Codable {
-    let method, date: String
+    let method, date: String?
     let creditLine: String?
 }
 
@@ -100,8 +100,8 @@ struct Dimension: Codable {
 
 // MARK: - Label
 struct Label: Codable {
-    let title, makerLine, labelDescription, notes: String
-    let date: String
+    let title, makerLine, labelDescription, notes: String?
+    let date: String?
 
     enum CodingKeys: String, CodingKey {
         case title, makerLine

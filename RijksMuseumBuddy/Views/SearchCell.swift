@@ -22,7 +22,7 @@ class SearchCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         layer.cornerRadius = 5
-        backgroundColor = .systemGray
+        backgroundColor = .darkGray
     }
     
     override func awakeFromNib() {

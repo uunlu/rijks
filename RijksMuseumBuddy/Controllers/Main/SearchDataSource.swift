@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import Combine
 
-class SearchDataSource: NSObject, UICollectionViewDataSource {
+final class SearchDataSource: NSObject, UICollectionViewDataSource {
     @Published var selected: String = ""
     
     private var model: [String] = []

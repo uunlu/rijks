@@ -9,7 +9,7 @@ import Foundation
 import Siesta
 import Combine
 
-class GalleryViewModel: ObservableObject {
+final class GalleryViewModel: ObservableObject {
     private(set) var currentPage: Int = 1
     private(set) var collectionsResource: Resource? {
         didSet {
@@ -32,10 +32,12 @@ extension GalleryViewModel: ResourceObserver {
         guard let result: Collection = resource.typedContent() else {
             print(resource.text)
             print("invalid model")
+            // TODO: Handle error on UI
             return
         }
         
 //        print(result)
+        self.items.removeAll()
         self.items.append(contentsOf: result.artObjects)
         currentPage += 1
     }

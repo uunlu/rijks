@@ -32,6 +32,7 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="Kno-wp-gqr" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="2xL-iT-SeU"/>
                 <constraint firstAttribute="bottom" secondItem="Kno-wp-gqr" secondAttribute="bottom" constant="5" id="Lnm-EY-IzD"/>
