@@ -38,4 +38,20 @@ class ImageLoaderTests: XCTestCase {
         _=XCTWaiter.wait(for: [expectation], timeout: 5.0)
         XCTAssertNil(image)
     }
+    
+    func testShouldCancelDownloadTaskWithId() {
+        let loader = ImageLoader()
+        var image: UIImage? = nil
+        let imageURL = URL(string: "https://lh3.googleusercontent.com/I9oSzKfxHOxXB2GHbHE5byjd5FABgY7XEbAh0U5AJgsVJdCwsVJrtazWekJ7NSW5jPM96gflYIDeAu2wv3-8oXBhsT8=s0")!
+        
+        let expectation = XCTestExpectation(description: "Image Download Task Id Check")
+        let id = loader.download(url: imageURL) { img in
+            image = img
+            expectation.fulfill()
+        }
+        XCTAssertNotNil(id)
+        loader.cancelLoad(id!)
+        XCTAssertNil(image)
+        _=XCTWaiter.wait(for: [expectation], timeout: 5.0)
+    }
 }
