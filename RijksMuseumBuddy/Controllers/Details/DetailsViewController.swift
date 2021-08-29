@@ -25,13 +25,14 @@ final class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         subcribeToPublishers()
+        addGestureRecognizer()
         vm.fetch(id: id)
-        
+    }
+    
+    private func addGestureRecognizer() {
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didPan(_:)))
-//        let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(didPan(_:)))
         mainImageView.isUserInteractionEnabled = true
-
-                // Add Swipe Gesture Recognizer
+        // Add Swipe Gesture Recognizer
         mainImageView.addGestureRecognizer(panGestureRecognizer)
     }
     
@@ -76,6 +77,7 @@ extension DetailsViewController {
             }
             .store(in: &bag)
     }
+    
     func updateUI(_ value: ArtObjectDetailsDTO?){
         guard let value = value else { return }
         artTitleLabel.text = value.title
