@@ -20,7 +20,9 @@ final class GalleryViewModel: ObservableObject {
     }
     private var lastMaker: String = ""
     private var lastQuery: String = ""
+    
     @Published var items: [ArtObject] = []
+    @Published private(set) var hasError: Bool = false
     
     init(with resource: Resource = API.shared.search("", page: 1)){
         collectionsResource = resource
@@ -32,6 +34,10 @@ extension GalleryViewModel: ResourceObserver {
         guard let result: Collection = resource.typedContent() else {
             print("invalid model")
             // TODO: Handle error on UI
+            if let error = resource.latestError {
+                print("--error: \(error.userMessage)")
+                self.hasError = true
+            }
             return
         }
         
@@ -40,12 +46,16 @@ extension GalleryViewModel: ResourceObserver {
         currentPage += 1
     }
     
-    func fetch(maker: String, query: String = "") {
+    func fetch(maker: String, query: String = "", page: Int? = nil) {
+        if let page = page {
+            currentPage = page
+        }
         if lastMaker != maker || lastQuery != query {
             currentPage = 1
             lastMaker = maker
             lastQuery = query
         }
+        
         collectionsResource = API.shared.search(maker, query: query, page: currentPage)
     }
 }

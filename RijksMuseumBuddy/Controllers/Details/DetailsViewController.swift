@@ -72,13 +72,13 @@ extension DetailsViewController {
         vm.$hasError
             .sink { value in
                 if value {
-                    self.displayError()
+                    self.displayErrorMessage()
                 }
             }
             .store(in: &bag)
     }
     
-    func updateUI(_ value: ArtObjectDetailsDTO?){
+    fileprivate func updateUI(_ value: ArtObjectDetailsDTO?){
         guard let value = value else { return }
         artTitleLabel.text = value.title
         artDescriptionLabel.text = value.desciption
@@ -94,11 +94,5 @@ extension DetailsViewController {
             }
         }
     }
-    
-    func displayError() {
-        let errorMessage = "Collection cannot be displayed"
-        let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in }))
-        self.present(alert, animated: true, completion: nil)
-    }
 }
+

@@ -18,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8m1-h0-hef">
-                                <rect key="frame" x="0.0" y="44" width="414" height="692"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="792"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7kK-OP-F5d" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="684.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="783.33333333333337"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yNx-Jj-HOv">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
@@ -74,7 +74,7 @@
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="rds-RH-Oyw" firstAttribute="trailing" secondItem="8m1-h0-hef" secondAttribute="trailing" id="3t9-zY-G7y"/>
-                            <constraint firstItem="rds-RH-Oyw" firstAttribute="bottom" secondItem="8m1-h0-hef" secondAttribute="bottom" id="DZz-7c-bAg"/>
+                            <constraint firstItem="rds-RH-Oyw" firstAttribute="bottom" secondItem="8m1-h0-hef" secondAttribute="bottom" constant="-100" id="DZz-7c-bAg"/>
                             <constraint firstItem="8m1-h0-hef" firstAttribute="leading" secondItem="rds-RH-Oyw" secondAttribute="leading" id="EA1-OL-4HY"/>
                             <constraint firstItem="8m1-h0-hef" firstAttribute="top" secondItem="rds-RH-Oyw" secondAttribute="top" id="g07-1l-pvE"/>
                         </constraints>

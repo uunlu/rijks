@@ -81,6 +81,12 @@ final class MainViewController: UIViewController {
     }
     
     // MARK: - Helpers
+    @objc func clean() {
+        selectedArtist = ""
+        query = ""
+        vm.fetch(maker: "", query: "", page: 1)
+    }
+    
     private func updateUI() {
         // Only search by Maker or Searh Text is possible
         searchTextField.text = ""

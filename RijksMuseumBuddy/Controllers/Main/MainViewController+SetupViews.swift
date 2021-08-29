@@ -19,6 +19,9 @@ extension MainViewController {
         // Setup Search TextField
         searchTextField.delegate = self
         searchTextField.autocapitalizationType = .none
+        
+        // Setup Navigationbar Button
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(clean))
     }
     
     private func setupActivityIndicator() {
@@ -180,6 +183,13 @@ extension MainViewController {
             .receive(on: RunLoop.main)
             .sink { selectedArtist in
                 self.selectedArtist = selectedArtist
+            }
+            .store(in: &bag)
+        vm.$hasError
+            .sink { value in
+                if value {
+                    self.displayErrorMessage()
+                }
             }
             .store(in: &bag)
     }
