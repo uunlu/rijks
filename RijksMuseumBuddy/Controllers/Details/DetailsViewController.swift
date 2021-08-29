@@ -34,32 +34,23 @@ final class DetailsViewController: UIViewController {
                 // Add Swipe Gesture Recognizer
         mainImageView.addGestureRecognizer(panGestureRecognizer)
     }
+    
     @objc private func didPan(_ sender: UIPanGestureRecognizer) {
-        let heightConstraint =   topStackViewToMainImageViewBuittomCostraint.constant
         switch sender.state {
         case .began:
             initialCenter = mainImageView.center
-            scaleDiff = mainImageView.frame.height
-            print("initial: \(scaleDiff)")
         case .changed:
             let translation = sender.translation(in: view)
             guard initialCenter.y - translation.y < 0 else {
-//                print("wrong direction")
                 return
             }
-            let scaleRatio = 1+abs(initialCenter.y - translation.y)/500
+            let scaleRatio = min(1.25, 1+abs(initialCenter.y - translation.y)/500)
             
             mainImageView.transform = CGAffineTransform(scaleX: scaleRatio, y: scaleRatio)
-            let scaleDiff1 = abs(scaleDiff - mainImageView.frame.height)/500
-            print("scaleDiff")
-            print(scaleDiff1)
-//            topStackViewToMainImageViewBuittomCostraint.constant += scaleDiff1
-            mainImageView.layoutIfNeeded()
+            view.layoutIfNeeded()
         default:
             mainImageView.transform = CGAffineTransform.identity
-            topStackViewToMainImageViewBuittomCostraint.constant -= heightConstraint
             view.updateConstraintsIfNeeded()
-            print("default")
             break
         }
     }
