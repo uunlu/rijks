@@ -39,6 +39,10 @@ class API: Service {
         service.configureTransformer("collection") {
                 try jsonDecoder.decode(Collection.self, from: $0.content)
         }
+        
+        service.configureTransformer("collection/**") {
+                try jsonDecoder.decode(CollectionDetails.self, from: $0.content)
+        }
     }
 }
 
@@ -51,5 +55,11 @@ extension API {
             .withParam("p", "\(page)")
             .withParam("q", "\(query)")
             .withParam("ps", "\(pageSize)")
+    }
+    
+    func details(id: String)  -> Resource {
+        return service
+            .resource("collection/\(id)/")
+            .withParam("key", Config.apiKey)
     }
 }

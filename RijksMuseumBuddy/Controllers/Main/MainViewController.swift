@@ -18,6 +18,10 @@ class MainViewController: UIViewController {
     var topSearchContainerStackView: UIStackView!
     @Published var searchTextField: UISearchTextField!
     
+    @IBSegueAction func detailSeque(_ coder: NSCoder) -> DetailsViewController? {
+        return DetailsViewController(coder: coder)
+    }
+    
     lazy var dataSource: GalleryCollectionViewDataSource = {
         let dataSource = GalleryCollectionViewDataSource(data: [])
         dataSource.collectionView = galleryCollectionView
@@ -238,14 +242,30 @@ class MainViewController: UIViewController {
             .receive(on: RunLoop.main)
             .sink { value in
                 print(value)
+                guard !value.isEmpty else { return }
+                
+                let targetVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
+                targetVC.id = value
+                self.present(targetVC, animated: true, completion: nil)
             }
             .store(in: &bag)
     }
 }
 
+// MARK: - Extensions TextFieldDelegate
 extension MainViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         query = textField.text ?? ""
         vm.fetch(maker: selectedArtist, query: query)
+    }
+}
+
+// MARK: - Navigation
+extension MainViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("--prepare navigation")
+        if segue.identifier == "DetailsSegue" {
+            let controller  = segue.destination as! DetailsViewController
+        }
     }
 }

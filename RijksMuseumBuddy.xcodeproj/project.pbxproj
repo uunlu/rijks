@@ -54,6 +54,8 @@
 		352248E026DAAFC300F12314 /* UISearchTextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352248DF26DAAFC300F12314 /* UISearchTextField+Extensions.swift */; };
 		352248E226DAB04C00F12314 /* ImageLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352248E126DAB04C00F12314 /* ImageLoadable.swift */; };
 		352248E626DAE0AB00F12314 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352248E526DAE0AB00F12314 /* DetailsViewController.swift */; };
+		352248E826DB645600F12314 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352248E726DB645500F12314 /* DetailsViewModel.swift */; };
+		352248EA26DB650600F12314 /* CollectionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352248E926DB650600F12314 /* CollectionDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +114,8 @@
 		352248DF26DAAFC300F12314 /* UISearchTextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearchTextField+Extensions.swift"; sourceTree = "<group>"; };
 		352248E126DAB04C00F12314 /* ImageLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadable.swift; sourceTree = "<group>"; };
 		352248E526DAE0AB00F12314 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		352248E726DB645500F12314 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
+		352248E926DB650600F12314 /* CollectionDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +206,7 @@
 				3522487A26DA29B800F12314 /* CountFacets.swift */,
 				3522487C26DA29CB00F12314 /* CollectionFacet.swift */,
 				3522487E26DA29E400F12314 /* FacetFacet.swift */,
+				352248E926DB650600F12314 /* CollectionDetails.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -294,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				352248E526DAE0AB00F12314 /* DetailsViewController.swift */,
+				352248E726DB645500F12314 /* DetailsViewModel.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -450,6 +456,7 @@
 				3522485A26DA25C300F12314 /* AppDelegate.swift in Sources */,
 				352248D226DA5DF500F12314 /* GalleryCollectionViewDataSource.swift in Sources */,
 				352248B926DA3F1000F12314 /* SearchCellViewModel.swift in Sources */,
+				352248E826DB645600F12314 /* DetailsViewModel.swift in Sources */,
 				352248B726DA3C2800F12314 /* SearchDataSource.swift in Sources */,
 				352248D526DA5E2B00F12314 /* ArtDTO.swift in Sources */,
 				3522488126DA2A3E00F12314 /* Config.swift in Sources */,
@@ -457,6 +464,7 @@
 				352248B526DA3AC700F12314 /* StaticDataFactory.swift in Sources */,
 				352248E226DAB04C00F12314 /* ImageLoadable.swift in Sources */,
 				3522486F26DA28F500F12314 /* API.swift in Sources */,
+				352248EA26DB650600F12314 /* CollectionDetails.swift in Sources */,
 				352248BB26DA4F7200F12314 /* MainViewController+UICollectionViewDataSource.swift in Sources */,
 				352248DB26DA5EF800F12314 /* GalleryViewModel.swift in Sources */,
 				3522487B26DA29B800F12314 /* CountFacets.swift in Sources */,

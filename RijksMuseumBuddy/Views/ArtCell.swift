@@ -21,6 +21,7 @@ class ArtCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         imageView.image = nil
+        viewModel?.imageLoader?.cancel()
     }
     
     var viewModel: ArtDTO? {

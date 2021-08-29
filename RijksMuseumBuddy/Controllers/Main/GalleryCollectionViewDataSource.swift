@@ -66,7 +66,7 @@ extension GalleryCollectionViewDataSource: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedCollection = data[indexPath.row].id
+        selectedCollection = data[indexPath.row].objectNumber
     }
 }
 
