@@ -81,8 +81,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="SvH-eQ-e8g"/>
                     <connections>
-                        <outlet property="artDescription" destination="lF6-6t-FPI" id="9FB-cd-rhI"/>
-                        <outlet property="artTitle" destination="ZOV-nZ-A1Z" id="hH4-zD-qjg"/>
+                        <outlet property="artDescriptionLabel" destination="lF6-6t-FPI" id="nGL-tT-FOa"/>
+                        <outlet property="artTitleLabel" destination="ZOV-nZ-A1Z" id="hNh-qT-a8P"/>
                         <outlet property="mainImageView" destination="yNx-Jj-HOv" id="jOg-zk-rBx"/>
                     </connections>
                 </viewController>

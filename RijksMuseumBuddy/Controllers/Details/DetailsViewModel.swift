@@ -19,8 +19,10 @@ final class DetailsViewModel: ObservableObject {
     }
     
     @Published private(set) var model: ArtObjectDetailsDTO?
+    @Published private(set) var hasError: Bool = false
     
-    func fetch(id: String){
+    func fetch(id: String?){
+        guard let id = id else { return }
         detailsResource = API.shared.details(id: id)
     }
     
@@ -37,20 +39,14 @@ final class DetailsViewModel: ObservableObject {
 extension DetailsViewModel: ResourceObserver {
     func resourceChanged(_ resource: Resource, event: ResourceEvent) {
         guard let result: CollectionDetails = resource.typedContent() else {
-            print(resource.text)
             print("invalid model")
-            // TODO: Handle error on UI
+            if let error = resource.latestError {
+                print("--error: \(error.userMessage)")
+                self.hasError = true
+            }
             return
         }
-        
-        //print(result)
+        self.hasError = false
         transformData(result)
     }
-}
-
-struct ArtObjectDetailsDTO {
-    let id: String
-    let title: String
-    let desciption: String
-    let imageLink: String
 }
