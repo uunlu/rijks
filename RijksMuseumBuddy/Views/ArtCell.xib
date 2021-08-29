@@ -34,8 +34,8 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q9x-Tf-3Dt">
                     <rect key="frame" x="5" y="45" width="404" height="606"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CU1-6B-KSb">
-                    <rect key="frame" x="5" y="656" width="409" height="80"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CU1-6B-KSb">
+                    <rect key="frame" x="10" y="656" width="394" height="80"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="80" id="c6Y-mK-gZc"/>
                     </constraints>
@@ -53,19 +53,20 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="TiQ-z5-fy8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="57j-U5-LWo"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="CU1-6B-KSb" secondAttribute="trailing" id="9V5-2k-3Yk"/>
+                <constraint firstAttribute="trailing" secondItem="CU1-6B-KSb" secondAttribute="trailing" constant="10" id="9V5-2k-3Yk"/>
                 <constraint firstItem="TiQ-z5-fy8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="JNI-pu-MbT"/>
                 <constraint firstAttribute="trailing" secondItem="TiQ-z5-fy8" secondAttribute="trailing" id="OfY-2D-9Ah"/>
                 <constraint firstItem="Q9x-Tf-3Dt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="Uvv-Ij-WmC"/>
                 <constraint firstItem="Q9x-Tf-3Dt" firstAttribute="top" secondItem="TiQ-z5-fy8" secondAttribute="bottom" constant="5" id="ZhM-eQ-IEe"/>
                 <constraint firstItem="Q9x-Tf-3Dt" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" constant="-5" id="c17-3t-vZu"/>
                 <constraint firstItem="CU1-6B-KSb" firstAttribute="top" secondItem="Q9x-Tf-3Dt" secondAttribute="bottom" constant="5" id="kmq-HP-ErC"/>
-                <constraint firstItem="CU1-6B-KSb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="5" id="pI5-zJ-Upj"/>
+                <constraint firstItem="CU1-6B-KSb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="pI5-zJ-Upj"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="CU1-6B-KSb" secondAttribute="bottom" id="wmT-vn-7lo"/>
             </constraints>
             <connections>
                 <outlet property="imageView" destination="Q9x-Tf-3Dt" id="Qai-zM-ISI"/>
                 <outlet property="longTitle" destination="CU1-6B-KSb" id="GVj-PO-o5L"/>
+                <outlet property="longTitleHeightConstraint" destination="c6Y-mK-gZc" id="6Mc-Jq-Era"/>
                 <outlet property="title" destination="TiQ-z5-fy8" id="P5I-hR-VPX"/>
             </connections>
             <point key="canvasLocation" x="173.91304347826087" y="151.63043478260872"/>
