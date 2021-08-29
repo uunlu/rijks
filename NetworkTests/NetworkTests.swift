@@ -28,4 +28,17 @@ class NetworkTests: XCTestCase {
         resource = API.shared.search("Rembrandt van Rijn", page: 2)
         XCTAssertEqual(resource.url.relativeString, "https://www.rijksmuseum.nl/api/en/collection?involvedMaker=Rembrandt%20van%20Rijn&key=dk6t7TSv&p=2&ps=10")
     }
+    
+    func testGalleryViewModelCurrentPage() {
+        let resource = API.shared.search("", query: "gold")
+        let vm = GalleryViewModel(with: resource)
+        XCTAssertEqual(vm.currentPage, 1)
+        let expectation = XCTestExpectation(description: "Network Wait Expectation")
+        vm.fetch(maker: "", query: "gold")
+        _=XCTWaiter.wait(for: [expectation], timeout: 6.0)
+        DispatchQueue.main.asyncAfter(deadline: .now()+5){
+            XCTAssertEqual(vm.currentPage, 2)
+            expectation.fulfill()
+        }
+    }
 }

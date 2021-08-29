@@ -16,7 +16,9 @@ extension MainViewController {
         setupActivityIndicator()
         configureLayoutConstraints()
         
+        // Setup Search TextField
         searchTextField.delegate = self
+        searchTextField.autocapitalizationType = .none
     }
     
     private func setupActivityIndicator() {
@@ -119,13 +121,6 @@ extension MainViewController {
             searchCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0)
         ])
         searchBottomAnchor = searchCollectionView.bottomAnchor
-        
-        searchDatasource.$selected
-            .receive(on: RunLoop.main)
-            .sink { selectedArtist in
-                self.selectedArtist = selectedArtist
-            }
-            .store(in: &bag)
     }
     
     private func setupGalleryView() {
@@ -140,8 +135,8 @@ extension MainViewController {
         
         view.addSubview(galleryCollectionView)
         
-        galleryCollectionView.dataSource = dataSource
-        galleryCollectionView.delegate = dataSource
+        galleryCollectionView.dataSource = galleryDataSource
+        galleryCollectionView.delegate = galleryDataSource
         
         galleryCollectionView.register(UINib(nibName: "ArtCell", bundle: nil), forCellWithReuseIdentifier: ArtCell.identifier)
     }
@@ -156,12 +151,12 @@ extension MainViewController {
             .receive(on: RunLoop.main)
             .sink { value in
                 print("data fetched: \(value.count)")
-                self.dataSource.updateData(value)
+                self.galleryDataSource.updateData(value)
                 self.galleryCollectionView.reloadData()
                 self.loadingIndicator.stopAnimating()
             }
             .store(in: &bag)
-        dataSource.$shouldFetch
+        galleryDataSource.$shouldFetch
             .receive(on: RunLoop.main)
             .sink { shouldFetch in
                 if shouldFetch, !self.vm.collectionsResource!.isLoading {
@@ -170,7 +165,7 @@ extension MainViewController {
                 }
             }
             .store(in: &bag)
-        dataSource.$selectedCollection
+        galleryDataSource.$selectedCollection
             .receive(on: RunLoop.main)
             .sink { value in
                 print(value)
@@ -179,6 +174,12 @@ extension MainViewController {
                 let targetVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
                 targetVC.id = value
                 self.present(targetVC, animated: true, completion: nil)
+            }
+            .store(in: &bag)
+        searchDatasource.$selected
+            .receive(on: RunLoop.main)
+            .sink { selectedArtist in
+                self.selectedArtist = selectedArtist
             }
             .store(in: &bag)
     }

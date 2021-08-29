@@ -8,10 +8,13 @@
 import UIKit
 
 class ArtCell: UICollectionViewCell {
-    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var longTitle: UILabel!
+    @IBOutlet weak var longTitleHeightConstraint: NSLayoutConstraint!
+    static let identifier = "ArtCell"
+    private let longTitleHeightPortraitModeConstraint: CGFloat = 80
+    private var imageDownloadID: UUID?
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -25,8 +28,13 @@ class ArtCell: UICollectionViewCell {
         viewModel?.imageLoader?.cancelLoad(id)
     }
     
-    private var imageDownloadID: UUID?
-    static let identifier = "ArtCell"
+    override func layoutSubviews() {
+        if bounds.width > bounds.height {
+            longTitleHeightConstraint.constant = 0
+        }else {
+            longTitleHeightConstraint.constant = longTitleHeightPortraitModeConstraint
+        }
+    }
     
     var viewModel: ArtDTO? {
         didSet{
@@ -62,4 +70,3 @@ class ArtCell: UICollectionViewCell {
         })
     }
 }
-

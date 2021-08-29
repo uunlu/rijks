@@ -25,7 +25,7 @@ final class MainViewController: UIViewController {
     }()
     
     // MARK: - Lazy Variables
-    lazy var dataSource: GalleryCollectionViewDataSource = {
+    lazy var galleryDataSource: GalleryCollectionViewDataSource = {
         let dataSource = GalleryCollectionViewDataSource(data: [])
         dataSource.collectionView = galleryCollectionView
         return dataSource
@@ -82,8 +82,10 @@ final class MainViewController: UIViewController {
     
     // MARK: - Helpers
     private func updateUI() {
+        // Only search by Maker or Searh Text is possible
+        searchTextField.text = ""
         searchArtistLabel.text = selectedArtist
-        dataSource.removeAll()
+        galleryDataSource.removeAll()
         vm.fetch(maker: selectedArtist)
         loadingIndicator.startAnimating()
     }
@@ -113,6 +115,8 @@ final class MainViewController: UIViewController {
 extension MainViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         query = textField.text ?? ""
-        vm.fetch(maker: selectedArtist, query: query)
+        galleryDataSource.removeAll()
+        selectedArtist = ""
+        vm.fetch(maker: "", query: query)
     }
 }
