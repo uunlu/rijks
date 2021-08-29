@@ -84,6 +84,7 @@
                         <outlet property="artDescriptionLabel" destination="lF6-6t-FPI" id="nGL-tT-FOa"/>
                         <outlet property="artTitleLabel" destination="ZOV-nZ-A1Z" id="hNh-qT-a8P"/>
                         <outlet property="mainImageView" destination="yNx-Jj-HOv" id="jOg-zk-rBx"/>
+                        <outlet property="topStackViewToMainImageViewBuittomCostraint" destination="CTy-s2-bg1" id="w9E-dE-pp0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vIe-7b-wDS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

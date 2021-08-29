@@ -13,17 +13,55 @@ final class DetailsViewController: UIViewController {
     var id: String?
     private var vm = DetailsViewModel()
     private var bag: Set<AnyCancellable> = Set<AnyCancellable>()
-    
+    private var initialCenter: CGPoint = .zero
+    private var scaleDiff: CGFloat = 0
     // MARK: - Outlets
     @IBOutlet private weak var artTitleLabel: UILabel!
     @IBOutlet private weak var artDescriptionLabel: UILabel!
     @IBOutlet private weak var mainImageView: UIImageView!
     
+    @IBOutlet weak var topStackViewToMainImageViewBuittomCostraint: NSLayoutConstraint!
     // MARK: - View Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         subcribeToPublishers()
         vm.fetch(id: id)
+        
+        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didPan(_:)))
+//        let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(didPan(_:)))
+        mainImageView.isUserInteractionEnabled = true
+
+                // Add Swipe Gesture Recognizer
+        mainImageView.addGestureRecognizer(panGestureRecognizer)
+    }
+    @objc private func didPan(_ sender: UIPanGestureRecognizer) {
+        let heightConstraint =   topStackViewToMainImageViewBuittomCostraint.constant
+        switch sender.state {
+        case .began:
+            initialCenter = mainImageView.center
+            scaleDiff = mainImageView.frame.height
+            print("initial: \(scaleDiff)")
+        case .changed:
+            let translation = sender.translation(in: view)
+            guard initialCenter.y - translation.y < 0 else {
+//                print("wrong direction")
+                return
+            }
+            let scaleRatio = 1+abs(initialCenter.y - translation.y)/500
+            
+            mainImageView.transform = CGAffineTransform(scaleX: scaleRatio, y: scaleRatio)
+            let scaleDiff1 = abs(scaleDiff - mainImageView.frame.height)/500
+            print("scaleDiff")
+            print(scaleDiff1)
+//            topStackViewToMainImageViewBuittomCostraint.constant += scaleDiff1
+            mainImageView.layoutIfNeeded()
+        default:
+            mainImageView.transform = CGAffineTransform.identity
+            topStackViewToMainImageViewBuittomCostraint.constant -= heightConstraint
+            view.updateConstraintsIfNeeded()
+            print("default")
+            break
+        }
     }
     
     override func willAnimateRotation(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
